@@ -1,9 +1,10 @@
 <?php
 declare(strict_types=1);
 
-// Requires
+// REQUIRES
 require 'model/connection.php';
 require 'model/insert.php';
+// Controllers
 require 'controller/controller.php';
 
 $controller = new controller();
