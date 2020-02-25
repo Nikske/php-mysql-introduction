@@ -32,7 +32,7 @@ class controller {
         $quote = trim(htmlspecialchars($_POST['inputQuote']));
         $quoteAuthor = trim(htmlspecialchars($_POST['inputQuoteAuthor']));
 
-        $preparation = $connection->prepare("INSERT INTO student (first_name, last_name, username, linkedin, github, email, preferred_language, avatar, video, quote, quote_author) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $preparation = $connection->prepare("INSERT INTO student (first_name, last_name, username, linkedin, github, email, preferred_language, avatar, video, quote, quote_author) VALUES (:first_name, :last_name, :username, :linkedin, :github, :email, :preferred_language, :avatar, :video, :quote, :quote_author)");
         $preparation->bindParam(':first_name', $firstName, PDO::PARAM_STR, 50);
         $preparation->bindParam(':last_name', $lastName, PDO::PARAM_STR, 50);
         $preparation->bindParam(':username', $userName, PDO::PARAM_STR, 50);
