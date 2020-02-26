@@ -18,6 +18,10 @@
                 <input type="text" id="inputLastName" name="inputLastName" class="form-control" required>
                 <label for="inputUserName">User name</label>
                 <input type="text" id="inputUserName" name="inputUserName" class="form-control" required>
+                <label for="inputPassword">Password</label>
+                <input type="password" id="inputPassword" name="inputPassword" class="form-control" required>
+                <label for="inputVerifyPass">Verify password</label>
+                <input type="password" id="inputVerifyPass" name="inputVerifyPass" class="form-control" required>
             </div>
             <!-- Linkedin, Github, Email and language -->
             <div class="form-group">
