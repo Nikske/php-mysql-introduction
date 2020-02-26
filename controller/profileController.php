@@ -7,11 +7,14 @@ error_reporting(E_ALL);
 
 class profileController {
     public function render(array $GET, array $POST) {
-        $this->loader();
+        $user = $this->loader();
         require 'view/profilepage.php';
     }
 
     private function loader() {
-        
+        $connection = openConnection();
+        $preparation = $connection->prepare("SELECT * FROM student WHERE id=:id");
+        $preparation->execute(['id'=>$_GET['user']]);
+        return $preparation->fetch();
     }
 }

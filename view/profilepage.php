@@ -9,19 +9,21 @@
 <body>
     <div class="container">
         <section class="row">
+            <!-- Avatar and language -->
             <article class="col">
-                <!-- Avatar and language -->
             </article>
+            <!-- User, First and Last name -->
             <article class="col">
-                <!-- User, First and Last name -->
+                <?php echo $user['first_name'] ?>
             </article>
         </section>
+
         <section class="row">
+            <!-- Video and quote -->
             <article class="col">
-                <!-- Video and quote -->
             </article>
+            <!-- Links and email -->
             <article class="col">
-                <!-- Links and email -->
             </article>
         </section>
     </div>
