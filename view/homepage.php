@@ -66,7 +66,7 @@
             <tr>
                 <th class="scope"><a target="_blank" href="http://sqlintro.local/profile.php?user=<?php echo $user['id'] ?>"><?php echo $user['first_name'] ?></a></th>
                 <td><?php echo $user['last_name'] ?></td>
-                <td><?php echo $user['preferred_language'] ?></td>
+                <td><img src="img/<?php echo $user['preferred_language']?>.png" alt="<?php echo $user['preferred_language'] ?>"></td>
             </tr>
             <?php endforeach; ?>
             </tbody>
