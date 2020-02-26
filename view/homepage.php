@@ -64,7 +64,7 @@
                 foreach ($users as $user):
                 ?>
             <tr>
-                <th class="scope"><?php echo $user['first_name'] ?></th>
+                <th class="scope"><a href="http://sqlintro.local/profile.php?user=<?php echo $user['id'] ?>"><?php echo $user['first_name'] ?></a></th>
                 <td><?php echo $user['last_name'] ?></td>
                 <td><?php echo $user['preferred_language'] ?></td>
             </tr>
