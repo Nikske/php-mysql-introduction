@@ -39,6 +39,8 @@ class loginController {
        if (password_verify($pass, $dbPass[0])) {
            $_SESSION['loginKey'] = true;
            echo "alright";
+           // The idea was to redirect to the user's profile page
+           header("location: ../profile.php");
        } else {
            echo "password's wrong";
        }
