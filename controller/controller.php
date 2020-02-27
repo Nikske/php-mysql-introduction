@@ -75,6 +75,7 @@ class controller {
         $firstName = trim(htmlspecialchars($_POST['inputFirstName']));
         $lastName = trim(htmlspecialchars($_POST['inputLastName']));
         $userName = trim(htmlspecialchars($_POST['inputUserName']));
+        $password = password_hash($_POST['inputPassword'], PASSWORD_DEFAULT);
         $linkedIn = trim(htmlspecialchars($_POST['inputLinkedin']));
         $github = trim(htmlspecialchars($_POST['inputGithub']));
         $email = trim(htmlspecialchars($_POST['inputEmail']));
@@ -84,7 +85,7 @@ class controller {
         $quote = trim(htmlspecialchars($_POST['inputQuote']));
         $quoteAuthor = trim(htmlspecialchars($_POST['inputQuoteAuthor']));
 
-        $preparation = $connection->prepare("INSERT INTO student (first_name, last_name, username, linkedin, github, email, preferred_language, avatar, video, quote, quote_author) VALUES (:first_name, :last_name, :username, :linkedin, :github, :email, :preferred_language, :avatar, :video, :quote, :quote_author)");
+        $preparation = $connection->prepare("INSERT INTO student (first_name, last_name, username, linkedin, github, email, preferred_language, avatar, video, quote, quote_author, password) VALUES (:first_name, :last_name, :username, :linkedin, :github, :email, :preferred_language, :avatar, :video, :quote, :quote_author, :password)");
         $preparation->bindValue(':first_name', $firstName, PDO::PARAM_STR);
         $preparation->bindValue(':last_name', $lastName, PDO::PARAM_STR);
         $preparation->bindValue(':username', $userName, PDO::PARAM_STR);
@@ -96,6 +97,7 @@ class controller {
         $preparation->bindValue(':video', $video, PDO::PARAM_STR);
         $preparation->bindValue(':quote', $quote, PDO::PARAM_STR);
         $preparation->bindValue(':quote_author', $quoteAuthor, PDO::PARAM_STR);
+        $preparation->bindValue(':password', $password, PDO::PARAM_STR);
         try {
             $preparation->execute();
         }
