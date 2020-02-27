@@ -29,12 +29,19 @@ class loginController {
         $connection = openConnection();
 
         $user = trim(htmlspecialchars($_POST['loginUser']));
-        $pass = password_hash($_POST['loginPass'], PASSWORD_DEFAULT);
+        $pass = trim(htmlspecialchars($_POST['loginPass']));
 
         $prep = $connection->prepare("SELECT password FROM student WHERE username=:username");
         $prep->bindValue(':username', $user, PDO::PARAM_STR);
         $prep->execute();
         $dbPass = $prep->fetch();
-        
+
+       if (password_verify($pass, $dbPass[0])) {
+           $_SESSION['loginKey'] = true;
+           echo "alright";
+       } else {
+           echo "password's wrong";
+       }
+
     }
 }
