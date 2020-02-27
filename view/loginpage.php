@@ -8,10 +8,10 @@
 </head>
 <body>
     <form method="post">
-        <label for="inputUsername">Username:</label>
-        <input type="text" id="inputUsername" name="inputUsername" required>
-        <label for="inputPassword">Password:</label>
-        <input type="password" id="inputPassword" name="inputPassword" required>
+        <label for="loginUser">Username:</label>
+        <input type="text" id="loginUser" name="loginUser" required>
+        <label for="loginPass">Password:</label>
+        <input type="password" id="loginPass" name="loginPass" required>
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
 </body>

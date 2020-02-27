@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 class controller {
     public function render(array $GET, array $POST) {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Should place validation in a separate, private function. Errors should go in an array, no echo'ing in the controller.
+            // Should place validation in a separate, private function. Errors should go in an array: no echo'ing in the controller.
             if (!isset($_POST['inputFirstName'])) {
                 echo "First name field empty";
             }
@@ -72,6 +72,7 @@ class controller {
     private function inserter() {
         $connection = openConnection();
 
+        // Could make a user class, set these as parameters
         $firstName = trim(htmlspecialchars($_POST['inputFirstName']));
         $lastName = trim(htmlspecialchars($_POST['inputLastName']));
         $userName = trim(htmlspecialchars($_POST['inputUserName']));
