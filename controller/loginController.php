@@ -51,7 +51,7 @@ class loginController {
            $_SESSION['loginKey'] = true;
            header("location: ../profile.php?user=". $dbPass[0] . "");
        } else {
-           echo "password's wrong";
+           echo "something's wrong";
        }
 
     }

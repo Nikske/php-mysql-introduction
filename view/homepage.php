@@ -10,6 +10,7 @@
     <!-- New user form -->
     <section>
         <a target="_blank" href="../login.php">Log in</a>
+        <h1>Register</h1>
         <form method="post">
             <!-- First, last and user name -->
             <div class="form-group">

@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="container">
+        <a href="../logout.php">Log out</a>
         <section class="row">
             <!-- Avatar and language -->
             <article class="col bg-success m-3 p-2 rounded">
