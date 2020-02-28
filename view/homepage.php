@@ -9,7 +9,7 @@
 <body>
     <!-- New user form -->
     <section>
-        <a href="../login.php">Log in</a>
+        <a target="_blank" href="../login.php">Log in</a>
         <form method="post">
             <!-- First, last and user name -->
             <div class="form-group">
