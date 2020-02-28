@@ -17,8 +17,6 @@ class loginController {
                 $this->login();
             }
         }
-        /*echo '<h2>$_SESSION</h2>';
-        var_dump($_SESSION);*/
         require 'view/loginpage.php';
     }
 
@@ -26,7 +24,7 @@ class loginController {
         if (empty($_SESSION['loginKey'])) {
             $_SESSION['loginKey'] = false;
         }
-        /*if ($_SESSION['loginKey']) {
+        if ($_SESSION['loginKey']) {
             $connection = openConnection();
 
             $prep = $connection->prepare("SELECT id FROM student WHERE username=:username");
@@ -35,7 +33,7 @@ class loginController {
             $dbId = $prep->fetch();
             var_dump($dbId);
             header("location: ../profile.php?user=". $dbId[0] . "");
-        }*/
+        }
     }
 
     private function login() {
